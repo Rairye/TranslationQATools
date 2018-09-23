@@ -18,38 +18,38 @@ public class Node implements Cloneable {
 	}
 	
 	public void addChild (String childName) {
-		this.children.put(childName, new Node(childName));
+		children.put(childName, new Node(childName));
 	}
 	
 	public boolean hasChild(String childName) {
-		return this.children.containsKey(childName);
+		return children.containsKey(childName);
 	}
 	
 	public void setAsWordEnd(String sourceTerm, String targetTerm) {
-		this.isWordEnd = true;
+		isWordEnd = true;
 		this.sourceTerm = sourceTerm;
 		this.targetTerm = targetTerm;
 	}
 	
 	public boolean isWordEnd() {
-		return this.isWordEnd;
+		return isWordEnd;
 	}
 	
 	public Node getChild(String childName) {
-		return this.children.get(childName);
+		return children.get(childName);
 	}
 	
 	public String getSourceTerm() {
-		return this.sourceTerm;
+		return sourceTerm;
 	}
 	
 	public boolean hasChildren() {
-		return !this.children.isEmpty();
+		return !children.isEmpty();
 	}
 	
 	public HashSet<Node> getChildren(){
 		HashSet<Node> results = new HashSet<>();
-		for (Node node : this.children.values()) {
+		for (Node node : children.values()) {
 			results.add(node);
 		}
 		return results;
@@ -57,7 +57,7 @@ public class Node implements Cloneable {
 	
 	@Override
 	public String toString() {
-		return this.sourceTerm + " -> " + this.targetTerm;
+		return sourceTerm + " -> " + targetTerm;
 	}
 	
 	@Override
